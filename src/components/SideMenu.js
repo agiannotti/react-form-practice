@@ -1,11 +1,9 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
 const style = {
   sideMenu: {
     backgroundColor: '#253053',
-    display: 'flex',
-    flexDirection: 'column',
     position: 'absolute',
     left: '0px',
     width: '320px',

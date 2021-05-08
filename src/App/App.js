@@ -1,6 +1,6 @@
 import './App.css';
 
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, CssBaseline } from '@material-ui/core';
 
 import SideMenu from '../components/SideMenu';
 import Header from '../components/Header';
@@ -18,8 +18,8 @@ const App = () => {
     <>
       <SideMenu />
       <div className={classes.appMain}>
-        Looking Good!
         <Header />
+        <CssBaseline />
       </div>
     </>
   );
