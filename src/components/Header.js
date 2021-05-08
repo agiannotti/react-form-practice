@@ -13,26 +13,29 @@ import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+// access themes using arrow func
+const useStyles = makeStyles((theme) => ({
   //use root to target entire component
   root: {
     backgroundColor: '#fff',
   },
   searchInput: {
     opacity: '0.4',
-    padding: '0px 8px',
+    // apply theme spacing to padding / margin via string interpolation ``
+    padding: `0px ${theme.spacing(1)}px`,
     fontSize: '0.8rem',
     borderRadius: '18px',
+    // use & operator to target desired jsx elements
     '&:hover': {
       backgroundColor: '#f2f2f2',
     },
-    '& .MuiSvgIcon-root': { marginRight: '8px' },
+    '& .MuiSvgIcon-root': { marginRight: theme.spacing(1.5) },
   },
   btnRoot: {
     backgroundColor: 'green',
   },
   btnLabel: { backgroundColor: 'red' },
-});
+}));
 
 const Header = () => {
   const classes = useStyles();
