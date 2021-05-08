@@ -26,6 +26,17 @@ const theme = createMuiTheme({
       default: '#f4f5fd',
     },
   },
+  shape: {
+    borderRadius: '12px',
+  },
+
+  overrides: {
+    MuiAppBar: {
+      root: {
+        transform: 'translateZ(0)',
+      },
+    },
+  },
 });
 
 const useStyles = makeStyles({
@@ -44,8 +55,8 @@ const App = () => {
         <Header />
         <PageHeader
           title='Page Header'
-          subTitle='Page description'
-          icon={<PeopleOutlineSharpIcon />}
+          subTitle='Page Description'
+          icon={<PeopleOutlineSharpIcon fontSize='large' />}
         />
       </div>
       <CssBaseline />
