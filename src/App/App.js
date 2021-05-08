@@ -9,6 +9,8 @@ import {
 
 import SideMenu from '../components/SideMenu';
 import Header from '../components/Header';
+import PageHeader from '../components/PageHeader';
+import PeopleOutlineSharpIcon from '@material-ui/icons/PeopleOutlineSharp';
 
 const theme = createMuiTheme({
   palette: {
@@ -19,6 +21,9 @@ const theme = createMuiTheme({
     secondary: {
       main: '#f83245',
       light: '#f8324526',
+    },
+    background: {
+      default: '#f4f5fd',
     },
   },
 });
@@ -37,8 +42,13 @@ const App = () => {
       <SideMenu />
       <div className={classes.appMain}>
         <Header />
-        <CssBaseline />
+        <PageHeader
+          title='Page Header'
+          subTitle='Page description'
+          icon={<PeopleOutlineSharpIcon />}
+        />
       </div>
+      <CssBaseline />
     </ThemeProvider>
   );
 };
