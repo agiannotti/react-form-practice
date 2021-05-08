@@ -3,7 +3,7 @@ import { makeStyles, withStyles } from '@material-ui/core';
 
 // withStyles & makeStyles
 // react JSS
-const useStyles = makeStyles({
+const style = {
   sideMenu: {
     backgroundColor: '#253053',
     display: 'flex',
@@ -13,12 +13,11 @@ const useStyles = makeStyles({
     width: '320px',
     height: '100%',
   },
-});
-
-const SideMenu = () => {
-  const classes = useStyles();
-
-  return <div className={classes.sideMenu}>asdasd</div>;
 };
 
-export default SideMenu;
+const SideMenu = (props) => {
+  const { classes } = props;
+  return <div className={classes.sideMenu}></div>;
+};
+
+export default withStyles(style)(SideMenu);
