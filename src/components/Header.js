@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   searchInput: {
     opacity: '0.4',
-    // apply theme spacing to padding / margin via string interpolation ``
+    // apply theme spacing to padding / margin via string interpolation `` remember to apply px etc
     padding: `0px ${theme.spacing(1)}px`,
     fontSize: '0.8rem',
     borderRadius: '18px',
@@ -32,9 +32,9 @@ const useStyles = makeStyles((theme) => ({
     '& .MuiSvgIcon-root': { marginRight: theme.spacing(1.5) },
   },
   btnRoot: {
-    backgroundColor: 'green',
+    backgroundColor: 'secondary',
   },
-  btnLabel: { backgroundColor: 'red' },
+  btnLabel: { backgroundColor: 'primary' },
 }));
 
 const Header = () => {
