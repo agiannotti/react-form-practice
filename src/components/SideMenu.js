@@ -1,8 +1,6 @@
 import React from 'react';
-import { makeStyles, withStyles } from '@material-ui/core';
+import { withStyles } from '@material-ui/core';
 
-// withStyles & makeStyles
-// react JSS
 const style = {
   sideMenu: {
     backgroundColor: '#253053',
