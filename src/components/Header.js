@@ -28,6 +28,10 @@ const useStyles = makeStyles({
     },
     '& .MuiSvgIcon-root': { marginRight: '8px' },
   },
+  btnRoot: {
+    backgroundColor: 'green',
+  },
+  btnLabel: { backgroundColor: 'red' },
 });
 
 const Header = () => {
@@ -45,7 +49,10 @@ const Header = () => {
           </Grid>
           <Grid item sm></Grid>
           <Grid item>
-            <IconButton>
+            <IconButton
+              // Targeting root and label classes within Mui elements, check MUI API and dev tools for element root parent child etc
+              classes={{ root: classes.btnRoot, label: classes.btnLabel }}
+            >
               <Badge badgeContent={4} color='secondary'>
                 <NotificationsNoneIcon fontSize='small' />
               </Badge>
