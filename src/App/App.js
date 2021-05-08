@@ -3,11 +3,12 @@ import './App.css';
 import { makeStyles } from '@material-ui/core';
 
 import SideMenu from '../components/SideMenu';
+import Header from '../components/Header';
 
 const useStyles = makeStyles({
   appMain: {
-    width: '100%',
     paddingLeft: '320px',
+    width: '100%',
   },
 });
 
@@ -16,7 +17,10 @@ const App = () => {
   return (
     <>
       <SideMenu />
-      <div className={classes.appMain}>Looking Good!</div>
+      <div className={classes.appMain}>
+        Looking Good!
+        <Header />
+      </div>
     </>
   );
 };

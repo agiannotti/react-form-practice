@@ -14,11 +14,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.side_menu {
-  background-color: #253053;
-  position: absolute;
-  left: 0;
-  width: 320px;
-  height: 100%;
-}
