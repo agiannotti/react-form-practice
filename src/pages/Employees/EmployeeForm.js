@@ -1,14 +1,16 @@
-import {
-  FormControlLabel,
-  Grid,
-  FormControl,
-  FormLabel,
-  Radio,
-  RadioGroup,
-  TextField,
-} from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import React from "react";
 import { Form, UseForm } from "../../components/UseForm";
+import Controls from "../../components/controls/Controls";
+import * as employeeService from "../../services/employeeService";
+
+// create an object for each radio button in the group
+const genderItems = [
+  { id: "she", title: "She/Her" },
+  { id: "he", title: "He/Him" },
+  { id: "they", title: "They/Them" },
+  { id: "other", title: "Other" },
+];
 
 // initialize values to use in state
 const initialFValues = {
@@ -17,7 +19,7 @@ const initialFValues = {
   email: "",
   mobile: "",
   city: "",
-  gender: "male",
+  pronouns: "",
   departmentId: "",
   hireDate: new Date(),
   isPermanent: false,
@@ -26,7 +28,7 @@ const initialFValues = {
 const EmployeeForm = () => {
   // pass defined variables into state
 
-  const { values, setValues, handleInputChange } = UseForm(initialFValues);
+  const { values, handleInputChange } = UseForm(initialFValues);
 
   // this callback func will execute when the variable changes
 
@@ -34,26 +36,41 @@ const EmployeeForm = () => {
     <Form>
       <Grid container>
         <Grid item xs={6}>
-          <TextField
-            variant="outlined"
-            label="Full Name"
+          <Controls.Input
             name="fullName"
+            label="Full Name"
             value={values.fullName}
             onChange={handleInputChange}
           />
-          <TextField variant="outlined" label="Email" value={values.email} />
+          <Controls.Input
+            variant="outlined"
+            label="Email"
+            value={values.email}
+            onChange={handleInputChange}
+          />
         </Grid>
         <Grid item xs={6}>
-          <FormControl>
-            <FormLabel>Gender</FormLabel>
-            <RadioGroup>
-              <FormControlLabel
-                label="non-binary"
-                value="non-binary"
-                control={<Radio />}
-              />
-            </RadioGroup>
-          </FormControl>
+          <Controls.RadioGroup
+            name="pronouns"
+            label="Pronouns"
+            value={values.pronouns}
+            onChange={handleInputChange}
+            items={genderItems}
+          />
+
+          <Controls.Select
+            name="departmentId"
+            label="Department"
+            value={values.departmentId}
+            onChange={handleInputChange}
+            options={employeeService.getDepartmentCollection()}
+          />
+          <Controls.Checkbox
+            name="isPermanent"
+            label="Permanent Employee"
+            value={values.isPermanent}
+            onChange={handleInputChange}
+          />
         </Grid>
       </Grid>
     </Form>

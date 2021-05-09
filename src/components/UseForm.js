@@ -6,6 +6,7 @@ export const UseForm = (initialFValues) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    console.log(value);
     setValues({
       ...values,
       [name]: value,
@@ -29,7 +30,11 @@ const useStyles = makeStyles((theme) => ({
 
 export const Form = (props) => {
   const classes = useStyles();
-  return <form className={classes.root}>{props.children}</form>;
+  return (
+    <form className={classes.root} autoComplete="off">
+      {props.children}
+    </form>
+  );
 };
 
 // if you choose to not have an export default because you want
