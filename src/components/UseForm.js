@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core';
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core";
 
 export const UseForm = (initialFValues) => {
   const [values, setValues] = useState(initialFValues);
@@ -20,8 +20,8 @@ export const UseForm = (initialFValues) => {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& .MuiFormControl-root': {
-      width: '80%',
+    "& .MuiFormControl-root": {
+      width: "80%",
       margin: theme.spacing(1),
     },
   },

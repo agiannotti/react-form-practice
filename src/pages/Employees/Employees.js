@@ -1,9 +1,9 @@
-import PeopleOutlineSharpIcon from '@material-ui/icons/PeopleOutlineSharp';
-import React from 'react';
-import { Paper, makeStyles } from '@material-ui/core';
+import PeopleOutlineSharpIcon from "@material-ui/icons/PeopleOutlineSharp";
+import React from "react";
+import { Paper, makeStyles } from "@material-ui/core";
 
-import PageHeader from '../../components/PageHeader';
-import EmployeeForm from './EmployeeForm';
+import PageHeader from "../../components/PageHeader";
+import EmployeeForm from "./EmployeeForm";
 
 const useStyles = makeStyles((theme) => ({
   pageContent: {
@@ -17,9 +17,9 @@ const Employees = () => {
   return (
     <>
       <PageHeader
-        title='New Employee'
-        subTitle='Form design with validation'
-        icon={<PeopleOutlineSharpIcon fontSize='large' />}
+        title="New Employee"
+        subTitle="Form design with validation"
+        icon={<PeopleOutlineSharpIcon fontSize="large" />}
       />
       <Paper className={classes.pageContent}>
         <EmployeeForm />
