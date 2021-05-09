@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, TextField, makeStyles } from '@material-ui/core';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiFormControl-root': {
-      width: '80%',
-      margin: theme.spacing(1),
-    },
-  },
-}));
+import { UseForm, Form } from '../../components/UseForm';
 
 // initialize values to use in state
 const initialFValues = {
@@ -25,25 +17,27 @@ const initialFValues = {
 
 const EmployeeForm = () => {
   // pass defined variables into state
-  const [values, setValues] = useState(initialFValues);
-  const classes = useStyles();
+
+  const { values, setValues, handleInputChange } = UseForm(initialFValues);
 
   // this callback func will execute when the variable changes
 
   return (
-    <form className={classes.root}>
+    <Form>
       <Grid container>
         <Grid item xs={6}>
           <TextField
             variant='outlined'
             label='Full Name'
+            name='fullName'
             value={values.fullName}
+            onChange={handleInputChange}
           />
           <TextField variant='outlined' label='Email' value={values.email} />
         </Grid>
         <Grid item xs={6}></Grid>
       </Grid>
-    </form>
+    </Form>
   );
 };
 
