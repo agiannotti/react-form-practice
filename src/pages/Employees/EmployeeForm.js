@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Grid, TextField, makeStyles } from '@material-ui/core';
+import { Grid, TextField } from '@material-ui/core';
 import { UseForm, Form } from '../../components/UseForm';
 
 // initialize values to use in state
@@ -18,7 +17,7 @@ const initialFValues = {
 const EmployeeForm = () => {
   // pass defined variables into state
 
-  const { values, setValues, handleInputChange } = UseForm(initialFValues);
+  const { values, handleInputChange } = UseForm(initialFValues);
 
   // this callback func will execute when the variable changes
 
